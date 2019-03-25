@@ -4,7 +4,7 @@ title: springboot2.0配置Https访问
 category: springboot
 ---
 
-### 生成安全证书
+## 生成安全证书
 
 ```
 e:\keystore>keytool -genkeypair -alias localhost -keyalg RSA -keystore E:\keystore\localhost.keystore -storetype pkcs12
@@ -26,7 +26,7 @@ CN=localhost, OU=xinwei, O=xinwei, L=bj, ST=bj, C=cn是否正确?
   [否]:  y
 ```
 
-### 配置HTTPS
+## 配置HTTPS
 
 * 将生成的`localhost.keystore`证书库文件复制到resource路径下
 * 配置application.properties
@@ -70,7 +70,7 @@ This combination of host and port requires TLS.
 
 * 访问`https://localhost:1024/hello?param=world`，成功返回`hello world`
 
-### 配置同时支持http和https访问
+## 配置同时支持http和https访问
 
 * 官方文档说明
 
@@ -115,7 +115,7 @@ public class HttpsConfig {
 
 * 访问`http://localhost:8080/hello?param=world`和`https://localhost:1024/hello?param=world`，均成功返回`hello world`
 
-### 配置http重定向https
+## 配置http重定向https
 
 * 在配置文件中添加http端口
 
@@ -174,7 +174,7 @@ public class HttpsConfig {
 
 * 访问`http://localhost:8080/hello?param=world`，将会被重定向到`https://localhost:1024/hello?param=world`
 
-### 添加wss协议支持
+## 添加wss协议支持
 
 * 配置类中添加bean
 
@@ -190,7 +190,7 @@ public TomcatContextCustomizer tomcatContextCustomizer() {
 }
 ```
 
-### 参考资料
+## 参考资料
 
 - [Spring Boot 配置https访问](https://blog.csdn.net/u013360850/article/details/85493764)
 - [spring boot 2.0 配置同时支持http和https](https://blog.csdn.net/qq_34459487/article/details/80885690)
