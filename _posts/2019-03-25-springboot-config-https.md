@@ -121,7 +121,7 @@ public class HttpsConfig {
 
 ```
 server.http-port:8080
-server.http:1024
+server.port:1024
 ```
 
 * 添加重定向配置
@@ -174,10 +174,26 @@ public class HttpsConfig {
 
 * 访问`http://localhost:8080/hello?param=world`，将会被重定向到`https://localhost:1024/hello?param=world`
 
+### 添加wss协议支持
+
+* 配置类中添加bean
+
+```
+@Bean
+public TomcatContextCustomizer tomcatContextCustomizer() {
+    return new TomcatContextCustomizer() {
+        @Override
+        public void customize(Context context) {
+            context.addServletContainerInitializer(new WsSci(), null);
+        }
+    };
+}
+```
 
 ### 参考资料
 
-- [spring boot 2.0配置同时支持http和https](https://blog.csdn.net/qq_34459487/article/details/80885690)
+- [Spring Boot 配置https访问](https://blog.csdn.net/u013360850/article/details/85493764)
+- [spring boot 2.0 配置同时支持http和https](https://blog.csdn.net/qq_34459487/article/details/80885690)
 - [spring-boot#Configure SSL](https://docs.spring.io/spring-boot/docs/2.1.3.RELEASE/reference/htmlsingle/#howto-configure-ssl)
 - [spring-boot-sample-tomcat-multi-connectors](https://github.com/spring-projects/spring-boot/tree/v2.0.0.RELEASE/spring-boot-samples/spring-boot-sample-tomcat-multi-connectors) 
 
