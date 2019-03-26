@@ -3,7 +3,7 @@ layout: post
 title: springboot2.0配置Https访问
 category: springboot
 tags: [https]
-excerpt: springboot配置https
+excerpt: 
 ---
 
 ## 生成安全证书
