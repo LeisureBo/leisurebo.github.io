@@ -142,7 +142,7 @@ public class LoadBalancerClientFilter implements GlobalFilter, Ordered {
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         // 获取路由请求的url，即配置的uri加上请求的端口及参数，例：lb://msg-push:9005/stomp
         URI url = exchange.getAttribute(GATEWAY_REQUEST_URL_ATTR);
-        // 获取lb前缀后携带的scheme前缀，即'lb:<scheme>'中尖括号部分
+        // 获取lb前缀后携带的scheme前缀，即'lb:<scheme>'中尖括号部分，如果没配置则该值为null
         String schemePrefix = exchange.getAttribute(GATEWAY_SCHEME_PREFIX_ATTR);
         if (url == null || (!"lb".equals(url.getScheme()) && !"lb".equals(schemePrefix))) {
             return chain.filter(exchange);
@@ -222,6 +222,6 @@ spring:
 
 ## 参考资料
 
-- [spring-cloud-gateway使用https注意事项1---设置证书和需要注意的问题](https://www.jianshu.com/p/e5ca9a0953fe)
-- [spring-cloud-gateway使用https注意事项2---如何在转发后端服务的时候使用http](https://www.jianshu.com/p/5a36129399f2)
-- [spring-cloud-gateway documents](https://github.com/spring-cloud/spring-cloud-gateway/blob/master/docs/src/main/asciidoc/spring-cloud-gateway.adoc)
+- [spring-cloud-gateway 使用https注意事项1---设置证书和需要注意的问题](https://www.jianshu.com/p/e5ca9a0953fe)
+- [spring-cloud-gateway 使用https注意事项2---如何在转发后端服务的时候使用http](https://www.jianshu.com/p/5a36129399f2)
+- [spring-cloud-gateway 官方文档](https://github.com/spring-cloud/spring-cloud-gateway/blob/master/docs/src/main/asciidoc/spring-cloud-gateway.adoc)
