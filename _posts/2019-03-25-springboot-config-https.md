@@ -196,6 +196,7 @@ public TomcatContextCustomizer tomcatContextCustomizer() {
 
 - [Spring Boot 配置https访问](https://blog.csdn.net/u013360850/article/details/85493764)
 - [spring boot 2.0 配置同时支持http和https](https://blog.csdn.net/qq_34459487/article/details/80885690)
+- [spring cloud/spring boot同时支持http和https访问](https://www.cnblogs.com/lianggp/p/8136540.html)
 - [spring-boot#Configure SSL](https://docs.spring.io/spring-boot/docs/2.1.3.RELEASE/reference/htmlsingle/#howto-configure-ssl)
 - [spring-boot-sample-tomcat-multi-connectors](https://github.com/spring-projects/spring-boot/tree/v2.0.0.RELEASE/spring-boot-samples/spring-boot-sample-tomcat-multi-connectors) 
 
