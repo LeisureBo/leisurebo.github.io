@@ -70,6 +70,31 @@ spring:
 
 但是当gateway升级为https后会存在一个问题，默认情况下，gateway将请求转发到微服务节点时也会使用https，这就需要接收请求的微服务也需要支持https。
 
+否则通过https网关访问不支持https的微服务会抛出如下异常：
+
+```
+io.netty.handler.ssl.NotSslRecordException: not an SSL/TLS record: 485454502f312e3120343030200d0a5472616e736665722d456e636f64696e673a206368756e6b65640d0a446174653a205475652c203236204d617220323031392031323a35333a343120474d540d0a436f6e6e656374696f6e3a20636c6f73650d0a0d0a300d0a0d0a
+	at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1156)
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1221)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:489)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:428)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:265)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1434)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:965)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:647)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:582)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:499)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:461)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884)
+	at java.lang.Thread.run(Thread.java:748)
+```
+
 如果配置每个微服务支持https，需要修改一下微服务的注册配置，添加hostname并且关闭prefer-ip-address，否则会抛出异常：
 
 > No subject alternative names matching IP address XXX found
