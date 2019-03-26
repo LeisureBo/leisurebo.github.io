@@ -10,6 +10,8 @@ excerpt: gateway https 路由采坑记录
 
 由于spring-cloud-gateway依赖springboot，SSL配置可参考上一篇博客：[springboot配置https访问](https://www.itbo.top/springboot/2019/03/25/springboot-config-https.html)
 
+需要注意的是，spring-cloud-gateway是基于spring-webflux的，与spring-boot-starter-web依赖有冲突，所以只能以配置文件形式来配置https。
+
 SSL配置如下:
 
 ```
