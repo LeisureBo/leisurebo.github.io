@@ -3,12 +3,12 @@ layout: post
 title: spring cloud gateway配置Https访问
 category: springboot
 tags: [https]
-excerpt: 
+excerpt: gateway https 路由采坑记录
 ---
 
 ## 配置SSL安全证书
 
-由于spring-cloud-gateway依赖于springboot，所以SSL配置参考上一篇博客：[springboot配置https访问](https://www.itbo.top/springboot/2019/03/25/springboot-config-https.html)
+由于spring-cloud-gateway依赖springboot，SSL配置可参考上一篇博客：[springboot配置https访问](https://www.itbo.top/springboot/2019/03/25/springboot-config-https.html)
 
 SSL配置如下:
 
