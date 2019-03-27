@@ -1,4 +1,4 @@
-{% if site.comments.disqus %}
+{% if site.comments.disqus.enable %}
 <div class="comments">
     <div id="disqus_thread"></div>
     <script>
@@ -25,7 +25,7 @@
 </div>
 {% endif %}
 
-{% if site.comments.gitalk %}
+{% if site.comments.gitalk.enable %}
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 <script src="/assets/js/md5.min.js"></script>
@@ -35,13 +35,13 @@
         var md5Id = md5(window.location.pathname);
         console.info("md5Id: " + md5Id);
         var gitalk = new Gitalk({
-            clientID: '{{ site.comments.gitalk_client_id }}',
-            clientSecret: '{{ site.comments.gitalk_secret }}',
-            repo: '{{ site.comments.gitalk_repo }}',
-            owner: '{{ site.comments.gitalk_owner }}',
-            admin: ['{{ site.comments.gitalk_admin }}'],
+            clientID: '{{ site.comments.gitalk.client_id }}',
+            clientSecret: '{{ site.comments.gitalk.secret }}',
+            repo: '{{ site.comments.gitalk.repo }}',
+            owner: '{{ site.comments.gitalk.owner }}',
+            admin: ['{{ site.comments.gitalk.admin }}'],
             id: md5Id,  // Ensure uniqueness and length less than 50{{ page.title }}
-            distractionFreeMode: '{{ site.comments.distraction_free_mode }}'  // Facebook-like distraction free mode
+            distractionFreeMode: '{{ site.comments.gitalk.distraction_free_mode }}'  // Facebook-like distraction free mode
         });
         gitalk.render('gitalk-container');
     </script>
