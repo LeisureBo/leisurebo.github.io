@@ -1,6 +1,7 @@
 ---
 layout: post
 title: My First Blog Page
+no-post-nav: true
 category: blog
 ---
 
