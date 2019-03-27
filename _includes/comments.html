@@ -33,6 +33,7 @@
     <div id="gitalk-container"></div>
     <script>
         var md5Id = md5(window.location.pathname);
+        console.info("md5Id: " + md5Id);
         var gitalk = new Gitalk({
             clientID: '{{ site.comments.gitalk_client_id }}',
             clientSecret: '{{ site.comments.gitalk_secret }}',
