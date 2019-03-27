@@ -99,7 +99,7 @@ comments:
   gitalk: true
   gitalk_client_id: cac766fc13c6143dbcd6
   gitalk_secret: a05f1b5385bfa6eb1f96d3a1e71f01d033553118
-  gitalk_repo: blog-comments
+  gitalk_repo: leisurebo.github.io
   gitalk_owner: leisurebo
   gitalk_admin: leisurebo
   distraction_free_mode: true
