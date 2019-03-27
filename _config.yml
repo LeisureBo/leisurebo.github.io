@@ -49,9 +49,6 @@ kramdown:
   input: GFM
   enable_coderay: true
 
-# Disque
-# disque: my_disque_settings # ex. httpdongchuangithubio.disqus.com
-
 # Pagination
 paginate: 10
 paginate_path: 'page:num'
@@ -96,6 +93,9 @@ skill_mobile_app_keywords: [Android, Sketch UI Desgin]
 
 # Comments plugins
 comments:
+  disqus: false
+  disqus_url: 'https://leisurebo.disqus.com/embed.js'
+
   gitalk: true
   gitalk_clientID: 'cac766fc13c6143dbcd6'
   gitalk_Secret: 'a05f1b5385bfa6eb1f96d3a1e71f01d033553118'
