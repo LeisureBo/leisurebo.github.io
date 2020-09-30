@@ -18,12 +18,12 @@ favicon: favicon.png # Image must be in assets/images
 
 # github_url: https://github.com/leisurebo # ex. https://github.com/DONGChuan
 # github_username: LeisureBo # ex. DONGChuan
-repository: leisurebo/leisurebo.github.io # ex. DONGChuan/DONGChuan.github.io
+repository: boonewong/boonewong.github.io # ex. DONGChuan/DONGChuan.github.io
 
 # The base hostname & protocol for your site
 # For local test, please use http://localhost:4000
 # For production, use your github page url. ex. http://dongchuan.github.io
-url: http://www.itbo.top
+url: http://www.itbo.ink
 
 ## Gem
 gems:
@@ -95,15 +95,15 @@ skill_mobile_app_keywords: [Android, Sketch UI Desgin]
 comments:
   disqus:
     enable: false
-    disqus_url: https://leisurebo.disqus.com/embed.js
+    disqus_url: https://boonewong.disqus.com/embed.js
 
   gitalk:
     enable: true
     client_id: cac766fc13c6143dbcd6
     secret: a05f1b5385bfa6eb1f96d3a1e71f01d033553118
-    repo: leisurebo.github.io
-    owner: LeisureBo
-    admin: LeisureBo
+    repo: boonewong.github.io
+    owner: boonewong
+    admin: boonewong
     distraction_free_mode: true
 
 
